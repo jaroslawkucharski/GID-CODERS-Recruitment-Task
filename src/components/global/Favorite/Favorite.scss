@@ -1,0 +1,32 @@
+.favorite {
+	font-size: var(--font-size-h2);
+	color: var(--brand-color);
+
+	&__animation {
+		animation-name: animation;
+		animation-duration: 1s;
+	}
+}
+
+@keyframes animation {
+	0% {
+		font-size: var(--font-size-h2);
+		color: var(--brand-color);
+	}
+	25% {
+		font-size: var(--font-size-h1);
+		color: var(--heart-color);
+	}
+	50% {
+		font-size: var(--font-size-h2);
+		color: var(--heart-color);
+	}
+	75% {
+		font-size: var(--font-size-h1);
+		color: var(--heart-color);
+	}
+	100% {
+		font-size: var(--font-size-h2);
+		color: var(--brand-color);
+	}
+}
