@@ -1,0 +1,17 @@
+.heading {
+	font-family: var(--font-family-bebas-nue);
+	color: var(--brand-color);
+	letter-spacing: 1px;
+
+	&__h1 {
+		font-size: var(--font-size-h1);
+	}
+
+	&__h2 {
+		font-size: var(--font-size-h2);
+	}
+
+	&__h3 {
+		font-size: var(--font-size-h3);
+	}
+}
