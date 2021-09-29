@@ -1,11 +1,12 @@
 import React, { Fragment, useCallback } from 'react'
+import { Switch, Route, NavLink } from 'react-router-dom'
 import uuid from 'react-uuid'
 import './MainPage.scss'
 
 import Heading from 'components/ui/Heading'
 import Box from 'components/global/Box'
 import Favorite from 'components/global/Favorite'
-import image from 'assets/images/beers_background.jpg'
+import image from 'assets/images/beers_background.avif'
 
 /**
  * MainPage page component
@@ -82,19 +83,31 @@ const MainPage = () => {
 	return (
 		<Fragment>
 			<header className="header">
-				<Heading>GID CODERS Recruitment Task</Heading>
-				<Favorite />
+				<NavLink to="/" activeClassName="selected">
+					<Heading>GID CODERS Recruitment Task</Heading>
+				</NavLink>
+
+				<NavLink to="/test" activeClassName="selected">
+					<Favorite />
+				</NavLink>
 			</header>
 
-			<main className="main">
-				<div className="main__section--img" style={{ backgroundImage: `url(${image})` }} />
+			<Switch>
+				<Route exact path="/">
+					<main className="main">
+						<div className="main__section--img" style={{ backgroundImage: `url(${image})` }} />
 
-				<div className="main__section--boxes">
-					{beers.map(item => (
-						<Box key={uuid()} item={item} onClickFavorite={test} />
-					))}
-				</div>
-			</main>
+						<div className="main__section--boxes">
+							{beers.map(item => (
+								<Box key={uuid()} item={item} onClickFavorite={test} />
+							))}
+						</div>
+					</main>
+				</Route>
+				<Route path="/test">
+					<main className="main">TEST</main>
+				</Route>
+			</Switch>
 		</Fragment>
 	)
 }
