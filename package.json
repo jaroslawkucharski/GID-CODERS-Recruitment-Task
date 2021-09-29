@@ -58,7 +58,7 @@
 			"./setupTests.js"
 		],
 		"moduleNameMapper": {
-			"^.+\\.(css|scss|png)$": "babel-jest"
+			"^.+\\.(css|scss|png|jpg)$": "babel-jest"
 		},
 		"coverageReporters": [
 			"json-summary",

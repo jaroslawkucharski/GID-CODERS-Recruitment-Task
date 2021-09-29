@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Heading from 'components/ui/Heading'
 
-describe('<Heading /> mount', () => {
+describe('<Heading /> component default', () => {
 	let wrapper
 
 	const props = {
@@ -16,7 +16,7 @@ describe('<Heading /> mount', () => {
 	})
 })
 
-describe('<Heading /> mount with level prop', () => {
+describe('<Heading /> component with props', () => {
 	let wrapper
 
 	const props = {

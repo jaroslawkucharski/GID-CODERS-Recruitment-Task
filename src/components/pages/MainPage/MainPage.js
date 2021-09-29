@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useCallback } from 'react'
 import uuid from 'react-uuid'
 import './MainPage.scss'
 
 import Heading from 'components/ui/Heading'
-import Box from 'components/ui/Box'
+import Box from 'components/global/Box'
 import Favorite from 'components/global/Favorite'
 import image from 'assets/images/beers_background.jpg'
 
@@ -75,6 +75,10 @@ const MainPage = () => {
 		}
 	]
 
+	const test = useCallback(() => {
+		console.log('test')
+	}, [])
+
 	return (
 		<Fragment>
 			<header className="header">
@@ -87,7 +91,7 @@ const MainPage = () => {
 
 				<div className="main__section--boxes">
 					{beers.map(item => (
-						<Box key={uuid()} item={item} />
+						<Box key={uuid()} item={item} onClickFavorite={test} />
 					))}
 				</div>
 			</main>
