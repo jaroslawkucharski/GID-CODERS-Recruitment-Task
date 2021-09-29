@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "cross-env NODE_PATH=src/ webpack serve",
 		"prebuild": "rimraf build",
-		"build": "npm run prebuild && cross-env NODE_PATH=src/ webpack",
+		"build": "cross-env NODE_PATH=src/ webpack",
 		"test": "cross-env NODE_PATH=src/ jest",
 		"test:coverage": "npm test -- --coverage",
 		"test:badges": "npm run test:coverage && jest-coverage-badges",
