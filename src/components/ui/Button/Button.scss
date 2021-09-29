@@ -1,0 +1,39 @@
+.button {
+	margin: 0 auto;
+	width: fit-content;
+	cursor: pointer;
+	padding: var(--padding-tiny) var(--padding-big);
+	border-radius: 20px;
+	font-family: var(--font-family-bebas-nue);
+	font-size: var(--font-size-h3);
+	letter-spacing: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: 0.5s;
+
+	&__primary {
+		background-color: var(--brand-color);
+		color: var(--main-color);
+
+		&:hover {
+			background-color: var(--heart-color);
+		}
+	}
+
+	&__secondary {
+		border: 2px solid var(--brand-color);
+		background: none;
+		color: var(--brand-color);
+
+		&:hover {
+			background-color: var(--main-color);
+		}
+	}
+
+	&__full-width {
+		padding: var(--padding-tiny) 0;
+		width: 100%;
+	}
+}
