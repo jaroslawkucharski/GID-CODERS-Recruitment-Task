@@ -1,5 +1,4 @@
 .box {
-	cursor: pointer;
 	width: 220px;
 	height: 300px;
 	background-color: var(--box-color);
@@ -13,17 +12,25 @@
 	animation-timing-function: ease-in-out;
 	position: relative;
 
+	&__hover {
+		padding: var(--padding-small);
+		width: 100%;
+		height: 100%;
+		background-color: var(--box-color);
+		border-radius: 20px;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 20px;
+		position: absolute;
+		opacity: 0.9;
+		z-index: 1;
+	}
+
 	&:hover {
-		&:after {
-			content: '';
-			width: 100%;
-			height: 100%;
-			background-color: var(--box-color);
-			border-radius: 20px;
-			display: block;
-			position: absolute;
-			opacity: 0.8;
-			z-index: 1;
+		.box__hover {
+			display: flex;
 		}
 	}
 
