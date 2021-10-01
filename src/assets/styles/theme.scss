@@ -14,10 +14,16 @@ a {
 	border: 0;
 	box-sizing: border-box;
 }
+
 body {
 	background-color: var(--main-color);
 	font-family: var(--font-family-montserrat);
 	font-size: var(--font-size-default);
+	color: var(--text-color);
+}
+
+a {
+	text-decoration: none;
 	color: var(--text-color);
 }
 
