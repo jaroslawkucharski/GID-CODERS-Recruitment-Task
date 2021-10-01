@@ -8,9 +8,19 @@ import AppContext from './AppContext'
  * @return {object} component with children
  */
 const AppProvider = ({ children }) => {
+	// beersData - beers data
 	const [beersData, setBeersData] = useState([])
 
-	const values = useMemo(() => ({ beersData, setBeersData }), [beersData])
+	// loadMore - retry fetchdata fetch
+	const [loadMore, setLoadMore] = useState(1)
+
+	// isLoading - loading data
+	const [isLoading, setLoading] = useState(true)
+
+	const values = useMemo(
+		() => ({ beersData, setBeersData, loadMore, setLoadMore, isLoading, setLoading }),
+		[beersData, loadMore, isLoading]
+	)
 
 	return <AppContext.Provider value={values}>{children}</AppContext.Provider>
 }
