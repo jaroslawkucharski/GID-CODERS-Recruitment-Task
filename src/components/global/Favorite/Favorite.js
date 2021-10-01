@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import './Favorite.scss'
 import PropTypes from 'prop-types'
 import { IoIosHeartEmpty } from 'react-icons/io'
@@ -21,10 +21,18 @@ const Favorite = ({ count }) => {
 		setTimeout(() => setAnimation(''), 1000)
 	}, [count])
 
-	return count > 0 ? (
-		<IoIosHeart className={`favorite ${animation}`} />
-	) : (
-		<IoIosHeartEmpty className={`favorite ${animation}`} />
+	return (
+		<Fragment>
+			<span>_</span>
+
+			{count > 0 ? (
+				<IoIosHeart className={`favorite ${animation}`} />
+			) : (
+				<IoIosHeartEmpty className={`favorite ${animation}`} />
+			)}
+
+			<span>_</span>
+		</Fragment>
 	)
 }
 

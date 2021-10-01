@@ -2,6 +2,10 @@
 	font-size: var(--font-size-h2);
 	color: var(--brand-color);
 
+	&:hover {
+		color: var(--heart-color);
+	}
+
 	&__animation {
 		animation-name: animation;
 		animation-duration: 1s;
