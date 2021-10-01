@@ -1,4 +1,5 @@
 .box {
+	padding: var(--padding-tiny);
 	width: 220px;
 	height: 300px;
 	background-color: var(--box-color);
@@ -44,12 +45,15 @@
 	&__name {
 		margin-top: var(--margin-medium);
 		margin-bottom: var(--margin-tiny);
+		text-align: center;
 		animation-name: animationContent;
 		animation-duration: 0.7s;
 		animation-timing-function: ease-in-out;
 	}
 
-	&__type {
+	&__tagline {
+		font-size: var(--font-size-tagline);
+		text-align: center;
 		animation-name: animationContent;
 		animation-duration: 0.9s;
 		animation-timing-function: ease-in-out;
