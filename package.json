@@ -60,7 +60,7 @@
 			"./setupTests.js"
 		],
 		"moduleNameMapper": {
-			"^.+\\.(css|scss|png|jpg)$": "babel-jest"
+			"^.+\\.(css|scss|png|jpg|avif)$": "babel-jest"
 		},
 		"coverageReporters": [
 			"json-summary",
