@@ -36,4 +36,8 @@
 		padding: var(--padding-tiny) 0;
 		width: 100%;
 	}
+
+	& > svg {
+		color: var(--heart-color);
+	}
 }

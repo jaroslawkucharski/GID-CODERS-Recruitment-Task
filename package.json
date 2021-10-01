@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "cross-env NODE_PATH=src/ webpack serve",
+		"prebuild": "rimraf build",
 		"build": "cross-env NODE_PATH=src/ webpack",
 		"test": "cross-env NODE_PATH=src/ jest",
 		"test:coverage": "npm test -- --coverage",
@@ -40,6 +41,7 @@
 		"prop-types": "^15.7.2",
 		"react-icons": "^4.2.0",
 		"react-uuid": "^1.0.2",
+		"regenerator-runtime": "^0.13.9",
 		"sass-loader": "^12.1.0",
 		"style-loader": "^3.1.0",
 		"webpack": "^5.51.1",
@@ -58,7 +60,7 @@
 			"./setupTests.js"
 		],
 		"moduleNameMapper": {
-			"^.+\\.(css|scss|png|jpg)$": "babel-jest"
+			"^.+\\.(css|scss|png|jpg|avif)$": "babel-jest"
 		},
 		"coverageReporters": [
 			"json-summary",
