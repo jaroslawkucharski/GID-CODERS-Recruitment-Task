@@ -1,0 +1,32 @@
+.main {
+	&__item {
+		padding: var(--padding-small) 0;
+		width: 100%;
+		display: flex;
+		justify-content: start;
+		align-items: start;
+		gap: 20px;
+
+		&--image {
+			width: 300px;
+
+			& > img {
+				height: 500px;
+			}
+		}
+		&--details {
+			width: 100%;
+			display: flex;
+			justify-content: start;
+			align-items: start;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.main__item--image {
+		display: none;
+	}
+}
