@@ -1,4 +1,4 @@
-.favorite {
+.favorites {
 	font-size: var(--font-size-h2);
 	color: var(--brand-color);
 
@@ -7,12 +7,12 @@
 	}
 
 	&__animation {
-		animation-name: animation;
+		animation-name: animationHeart;
 		animation-duration: 1s;
 	}
 }
 
-@keyframes animation {
+@keyframes animationHeart {
 	0% {
 		font-size: var(--font-size-h2);
 		color: var(--brand-color);
