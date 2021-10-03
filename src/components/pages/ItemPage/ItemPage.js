@@ -17,8 +17,6 @@ const ItemPage = () => {
 
 	useEffect(() => setItemData(beersData.filter(({ id }) => id === Number(itemId))), [beersData])
 
-	console.log(itemData)
-
 	return itemData.map(
 		({
 			name,
