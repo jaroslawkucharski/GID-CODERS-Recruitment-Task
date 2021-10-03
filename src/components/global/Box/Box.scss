@@ -34,38 +34,19 @@
 
 	& > img {
 		height: 120px;
-		animation-name: animationContent;
-		animation-duration: 0.5s;
-		animation-timing-function: ease-in-out;
 	}
 
 	&__name {
 		margin-top: var(--margin-medium);
 		margin-bottom: var(--margin-tiny);
 		text-align: center;
-		animation-name: animationContent;
-		animation-duration: 0.7s;
-		animation-timing-function: ease-in-out;
-		animation-iteration-count: 1;
 	}
 
 	&__tagline {
 		font-size: var(--font-size-tagline);
 		text-align: center;
-		animation-name: animationContent;
-		animation-duration: 0.9s;
-		animation-timing-function: ease-in-out;
 	}
 }
-
-// @keyframes animationContent {
-// 	from {
-// 		transform: translateX(-100px);
-// 	}
-// 	to {
-// 		transform: translateX(0);
-// 	}
-// }
 
 @media screen and (max-width: 459px) {
 	.box {
