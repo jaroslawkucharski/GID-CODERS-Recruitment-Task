@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
 import AppContext from 'provider/AppContext'
-import './Favorite.scss'
+import './Favorites.scss'
 
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { IoIosHeart } from 'react-icons/io'
@@ -13,7 +13,7 @@ const Favorites = () => {
 	const { favorites } = useContext(AppContext)
 	const [counter, setCounter] = useState(0)
 	const [animation, setAnimation] = useState('')
-	const isEmpty = counter > 0
+	const isEmpty = counter === 0
 
 	useEffect(() => {
 		setCounter(favorites.length)

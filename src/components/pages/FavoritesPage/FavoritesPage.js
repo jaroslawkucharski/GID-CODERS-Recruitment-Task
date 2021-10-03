@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from 'react'
 import AppContext from 'provider/AppContext'
 import uuid from 'react-uuid'
-import './FavoritesPage.scss'
 
 import Box from 'components/global/Box'
 import Loader from 'components/ui/Loader'

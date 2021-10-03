@@ -4,7 +4,7 @@ import AppProvider from 'provider/AppProvider'
 import { HashRouter as Router } from 'react-router-dom'
 import 'assets/styles/theme.scss'
 
-import Header from 'components/pages/Header'
+import Header from 'components/global/Header'
 import Layout from 'components/pages'
 
 const App = () => (

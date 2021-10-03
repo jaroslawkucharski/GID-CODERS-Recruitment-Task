@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './Header.scss'
 
 import Heading from 'components/ui/Heading'
-import Favorite from 'components/global/Favorite'
+import Favorites from 'components/global/Favorites'
 
 /**
  * Header global component
@@ -16,7 +16,7 @@ const Header = () => (
 		</NavLink>
 
 		<NavLink to="/favorite" activeClassName="selected">
-			<Favorite />
+			<Favorites />
 		</NavLink>
 	</header>
 )
