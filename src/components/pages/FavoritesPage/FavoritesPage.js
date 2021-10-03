@@ -4,6 +4,7 @@ import uuid from 'react-uuid'
 
 import Box from 'components/global/Box'
 import Loader from 'components/ui/Loader'
+import Heading from 'components/ui/Heading'
 
 /**
  * Favorites page component
@@ -14,13 +15,15 @@ const Favorites = () => {
 
 	return (
 		<Fragment>
+			<Heading level={2}>Your favorites beers</Heading>
+
 			{isLoading ? (
 				<Loader />
 			) : (
 				<div className="main__section--boxes">
-					{favorites.map(item => (
-						<Box key={uuid()} item={item} />
-					))}
+					{favorites.length
+						? favorites.map(item => <Box key={uuid()} item={item} />)
+						: 'Sorry bro, you don`t have any favorites beers :('}
 				</div>
 			)}
 		</Fragment>

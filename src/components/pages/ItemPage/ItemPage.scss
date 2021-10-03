@@ -8,7 +8,9 @@
 		gap: 20px;
 
 		&--image {
+			padding: var(--padding-medium);
 			width: 600px;
+			background-color: var(--box-color);
 			display: flex;
 			justify-content: center;
 			align-items: center;

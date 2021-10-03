@@ -28,7 +28,7 @@ const Layout = () => {
 
 			const { data } = await punkApiPagination(loadMore)
 
-			setAppData(prev => prev.concat(data))
+			setAppData(prev => [...prev, ...data])
 		} catch (error) {
 			console.log(error)
 		} finally {

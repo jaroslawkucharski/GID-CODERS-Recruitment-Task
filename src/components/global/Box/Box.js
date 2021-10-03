@@ -1,4 +1,4 @@
-import React, { memo, useContext, useCallback } from 'react'
+import React, { useContext, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import AppContext from 'provider/AppContext'
 import { Link } from 'react-router-dom'
@@ -83,4 +83,4 @@ Box.propTypes = {
 	item: PropTypes.object.isRequired
 }
 
-export default memo(Box)
+export default Box
