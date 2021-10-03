@@ -9,6 +9,7 @@ import Banner from 'components/global/Banner'
 import MainPage from 'components/pages/MainPage'
 import ItemPage from 'components/pages/ItemPage'
 import FavoritesPage from 'components/pages/FavoritesPage'
+import NotFound from 'components/pages/NotFound'
 
 /**
  * Layout page component
@@ -54,6 +55,9 @@ const Layout = () => {
 				</Route>
 				<Route path="/favorite">
 					<FavoritesPage />
+				</Route>
+				<Route>
+					<NotFound />
 				</Route>
 			</Switch>
 		</main>
