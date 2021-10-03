@@ -9,11 +9,10 @@ import Loader from 'components/ui/Loader'
 
 /**
  * MainPage page component
- * @prop {array} onClickFavorite
  * @return {object} component with children
  */
 const MainPage = () => {
-	const { beersData, loadMore, setLoadMore, isLoading } = useContext(AppContext)
+	const { appData, loadMore, setLoadMore, isLoading } = useContext(AppContext)
 
 	/**
 	 * handleLoadMore - fetch data
@@ -27,7 +26,7 @@ const MainPage = () => {
 				<Loader />
 			) : (
 				<div className="main__section--boxes">
-					{beersData.map(item => (
+					{appData.map(item => (
 						<Box key={uuid()} item={item} />
 					))}
 				</div>
