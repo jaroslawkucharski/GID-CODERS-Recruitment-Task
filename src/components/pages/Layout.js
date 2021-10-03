@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from 'react'
 import AppContext from 'provider/AppContext'
 import { Switch, Route } from 'react-router-dom'
+import './Layout.scss'
 
 import { punkApiPagination } from 'client/api/punkApi'
 
 import MainPage from 'components/pages/MainPage'
 import ItemPage from 'components/pages/ItemPage'
+import image from 'assets/images/beers_background.avif'
 
 /**
  * Layout page component
@@ -42,6 +44,8 @@ const Layout = () => {
 
 	return (
 		<main className="main">
+			<div className="banner" style={{ backgroundImage: `url(${image})` }} />
+
 			<Switch>
 				<Route exact path="/">
 					<MainPage onClickFavorite={test} />

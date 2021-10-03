@@ -13,6 +13,10 @@
 	animation-timing-function: ease-in-out;
 	position: relative;
 
+	// @include mobile {
+	// 	width: 100%;
+	// }
+
 	&__hover {
 		padding: var(--padding-small);
 		width: 100%;
@@ -75,5 +79,11 @@
 	}
 	to {
 		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 459px) {
+	.box {
+		width: 100%;
 	}
 }

@@ -6,7 +6,6 @@ import './MainPage.scss'
 import Box from 'components/global/Box'
 import Button from 'components/ui/Button'
 import Loader from 'components/ui/Loader'
-import image from 'assets/images/beers_background.avif'
 
 /**
  * MainPage page component
@@ -24,8 +23,6 @@ const MainPage = () => {
 
 	return (
 		<Fragment>
-			<div className="main__section--img" style={{ backgroundImage: `url(${image})` }} />
-
 			{isLoading ? (
 				<Loader />
 			) : (

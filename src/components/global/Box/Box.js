@@ -19,7 +19,7 @@ const Box = ({ item }) => {
 
 	return (
 		<div className="box">
-			<img src={image_url} />
+			<img src={image_url} title={name} alt={name} />
 
 			<div className="box__name">
 				<Heading level={3}>{name}</Heading>
