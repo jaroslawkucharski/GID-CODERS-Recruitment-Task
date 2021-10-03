@@ -8,14 +8,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	animation-name: animationBox;
-	animation-duration: 0.3s;
-	animation-timing-function: ease-in-out;
 	position: relative;
-
-	// @include mobile {
-	// 	width: 100%;
-	// }
 
 	&__hover {
 		padding: var(--padding-small);
@@ -53,6 +46,7 @@
 		animation-name: animationContent;
 		animation-duration: 0.7s;
 		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
 	}
 
 	&__tagline {
@@ -64,23 +58,14 @@
 	}
 }
 
-@keyframes animationBox {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
-	}
-}
-
-@keyframes animationContent {
-	from {
-		transform: translateX(-100px);
-	}
-	to {
-		transform: translateX(0);
-	}
-}
+// @keyframes animationContent {
+// 	from {
+// 		transform: translateX(-100px);
+// 	}
+// 	to {
+// 		transform: translateX(0);
+// 	}
+// }
 
 @media screen and (max-width: 459px) {
 	.box {

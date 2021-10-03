@@ -1,5 +1,6 @@
-import React, { memo } from 'react'
+import React, { useContext, useCallback } from 'react'
 import PropTypes from 'prop-types'
+import AppContext from 'provider/AppContext'
 import { Link } from 'react-router-dom'
 import './Box.scss'
 
@@ -7,15 +8,35 @@ import Heading from 'components/ui/Heading'
 import Button from 'components/ui/Button'
 
 import { IoIosHeartEmpty } from 'react-icons/io'
-// import { IoIosHeart } from 'react-icons/io'
+import { IoIosHeart } from 'react-icons/io'
 
 /**
- * Box UI component
+ * Box global component
  * @prop {object} item
  * @return {object} component with children
  */
 const Box = ({ item }) => {
+	const { favorites, setFavorites } = useContext(AppContext)
 	const { id, name, tagline, image_url } = item
+	const isInFavorites = favorites.find(item => item.id === id)
+
+	/**
+	 * handleAddToFavorite - add item to favorites
+	 * @return {function}
+	 */
+	const handleAddToFavorite = useCallback(
+		() => setFavorites(prev => [...prev, item]),
+		[favorites, setFavorites]
+	)
+
+	/**
+	 * handleRemovefromFavorite - remove item from favorites
+	 * @return {function}
+	 */
+	const handleRemovefromFavorite = useCallback(
+		() => setFavorites(favorites.filter(item => item.id !== id)),
+		[favorites, setFavorites]
+	)
 
 	return (
 		<div className="box">
@@ -29,11 +50,17 @@ const Box = ({ item }) => {
 
 			<div className="box__hover">
 				<Button fullWidth>
-					<Link to={`/${id}`}>: Read more :</Link>
+					<Link to={`/beer/${id}`}>: Read more :</Link>
 				</Button>
-				<Button variant="secondary" fullWidth>
-					Add to _ <IoIosHeartEmpty /> _
-				</Button>
+				{isInFavorites ? (
+					<Button variant="secondary" onClick={handleRemovefromFavorite} fullWidth>
+						Remove from _ <IoIosHeart /> _
+					</Button>
+				) : (
+					<Button variant="secondary" onClick={handleAddToFavorite} fullWidth>
+						Add to _ <IoIosHeartEmpty /> _
+					</Button>
+				)}
 			</div>
 		</div>
 	)
@@ -56,4 +83,4 @@ Box.propTypes = {
 	item: PropTypes.object.isRequired
 }
 
-export default memo(Box)
+export default Box

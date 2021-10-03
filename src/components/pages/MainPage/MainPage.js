@@ -5,15 +5,14 @@ import './MainPage.scss'
 
 import Box from 'components/global/Box'
 import Button from 'components/ui/Button'
-import Loader from 'components/ui/Loader'
+import Heading from 'components/ui/Heading'
 
 /**
  * MainPage page component
- * @prop {array} onClickFavorite
  * @return {object} component with children
  */
 const MainPage = () => {
-	const { beersData, loadMore, setLoadMore, isLoading } = useContext(AppContext)
+	const { appData, loadMore, setLoadMore, isLoading } = useContext(AppContext)
 
 	/**
 	 * handleLoadMore - fetch data
@@ -23,18 +22,16 @@ const MainPage = () => {
 
 	return (
 		<Fragment>
-			{isLoading ? (
-				<Loader />
-			) : (
-				<div className="main__section--boxes">
-					{beersData.map(item => (
-						<Box key={uuid()} item={item} />
-					))}
-				</div>
-			)}
+			<Heading level={2}>List of beers</Heading>
+
+			<div className="main__section--boxes">
+				{appData.map(item => (
+					<Box key={uuid()} item={item} />
+				))}
+			</div>
 
 			<div className="main__button">
-				<Button onClick={handleLoadMore} fullWidth>
+				<Button onClick={handleLoadMore} isLoading={isLoading} fullWidth>
 					: Load more :
 				</Button>
 			</div>

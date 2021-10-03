@@ -5,9 +5,10 @@ import './Layout.scss'
 
 import { punkApiPagination } from 'client/api/punkApi'
 
+import Banner from 'components/global/Banner'
 import MainPage from 'components/pages/MainPage'
 import ItemPage from 'components/pages/ItemPage'
-import image from 'assets/images/beers_background.avif'
+import FavoritesPage from 'components/pages/FavoritesPage'
 
 /**
  * Layout page component
@@ -15,7 +16,7 @@ import image from 'assets/images/beers_background.avif'
  * @return {object} component with children
  */
 const Layout = () => {
-	const { setBeersData, loadMore, setLoading } = useContext(AppContext)
+	const { setAppData, loadMore, setLoading } = useContext(AppContext)
 
 	/**
 	 * fetchPunkApi - get data
@@ -27,7 +28,7 @@ const Layout = () => {
 
 			const { data } = await punkApiPagination(loadMore)
 
-			setBeersData(prev => prev.concat(data))
+			setAppData(prev => [...prev, ...data])
 		} catch (error) {
 			console.log(error)
 		} finally {
@@ -35,26 +36,24 @@ const Layout = () => {
 		}
 	}
 
-	const test = () => null
-
 	/**
 	 * useEffect - fetch data
 	 */
 	useEffect(() => fetchPunkApi(), [loadMore])
 
 	return (
-		<main className="main">
-			<div className="banner" style={{ backgroundImage: `url(${image})` }} />
+		<main className="layout">
+			<Banner />
 
 			<Switch>
 				<Route exact path="/">
-					<MainPage onClickFavorite={test} />
+					<MainPage />
 				</Route>
-				<Route exact path="/:itemId">
+				<Route exact path="/beer/:itemId">
 					<ItemPage />
 				</Route>
-				<Route path="/test">
-					<main className="main">TEST</main>
+				<Route path="/favorite">
+					<FavoritesPage />
 				</Route>
 			</Switch>
 		</main>

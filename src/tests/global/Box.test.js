@@ -1,9 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import Provider from 'provider/AppProvider'
 import Box from 'components/global/Box'
 
 describe('<Box /> component default', () => {
 	let wrapper
+
+	const BoxComponent = () => (
+		<Provider>
+			<Box {...props} />
+		</Provider>
+	)
 
 	const props = {
 		item: {
@@ -13,7 +20,7 @@ describe('<Box /> component default', () => {
 		}
 	}
 
-	wrapper = shallow(<Box {...props} />)
+	wrapper = shallow(<BoxComponent />)
 
 	it('<Box /> mount', () => {
 		expect(wrapper.exists()).toBe(true)

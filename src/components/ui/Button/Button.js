@@ -8,9 +8,10 @@ import './Button.scss'
  * @prop {string} variant
  * @prop {bool} fullWidth
  * @prop {func} onClick
+ * @prop {bool} isLoading
  * @return {object} component with children
  */
-const Button = ({ children, variant, fullWidth, onClick }) => (
+const Button = ({ children, variant, fullWidth, onClick, isLoading }) => (
 	<button
 		type="button"
 		className={`
@@ -19,7 +20,7 @@ const Button = ({ children, variant, fullWidth, onClick }) => (
 			button__${variant}
 			`}
 		onClick={onClick}>
-		{children}
+		{isLoading ? 'Loading...' : children}
 	</button>
 )
 
@@ -49,7 +50,11 @@ Button.propTypes = {
 	/**
 	 * onClick - onClick
 	 */
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	/**
+	 * isLoading - button is loading
+	 */
+	isLoading: PropTypes.bool
 }
 
 /**
@@ -59,7 +64,8 @@ Button.propTypes = {
 Button.defaultProps = {
 	variant: 'primary',
 	fullWidth: false,
-	onClick: () => null
+	onClick: () => null,
+	isLoading: false
 }
 
 export default Button

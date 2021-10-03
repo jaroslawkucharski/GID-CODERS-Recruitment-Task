@@ -3,10 +3,10 @@
 		padding: var(--padding-small) 0;
 		width: 100%;
 		display: flex;
-		justify-content: space-around;
-		gap: 20px;
+		justify-content: start;
+		gap: 15px;
 		flex-wrap: wrap;
-		align-items: center;
+		align-items: start;
 	}
 
 	&__button {

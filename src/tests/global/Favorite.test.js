@@ -1,37 +1,40 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Favorite from 'components/global/Favorite'
+import Provider from 'provider/AppProvider'
+import Favorites from 'components/global/Favorites'
 
-describe('<Favorite /> component default', () => {
+describe('<Favorites /> component default', () => {
 	let wrapper
 
-	wrapper = shallow(<Favorite />)
+	const FavoritesComponent = () => (
+		<Provider>
+			<Favorites />
+		</Provider>
+	)
 
-	it('<Heading /> mount', () => {
+	wrapper = shallow(<FavoritesComponent />)
+
+	it('<Favorites /> mount', () => {
 		expect(wrapper.exists()).toBe(true)
-	})
-
-	it('<Heading /> expect `IoIosHeartEmpty`', () => {
-		expect(wrapper.find('IoIosHeartEmpty').exists()).toBe(true)
 	})
 })
 
-jest.useRealTimers()
-
-describe('<Favorite /> component with props', () => {
+describe('<Favorites /> component with props', () => {
 	let wrapper
 
 	const props = {
 		count: 1
 	}
 
-	wrapper = shallow(<Favorite {...props} />)
+	const FavoritesComponent = () => (
+		<Provider>
+			<Favorites {...props} />
+		</Provider>
+	)
 
-	it('<Heading /> mount', () => {
+	wrapper = shallow(<FavoritesComponent />)
+
+	it('<Favorites /> mount', () => {
 		expect(wrapper.exists()).toBe(true)
-	})
-
-	it('<Heading /> expect `IoIosHeart`', () => {
-		expect(wrapper.find('IoIosHeart').exists()).toBe(true)
 	})
 })

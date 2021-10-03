@@ -8,7 +8,12 @@
 		gap: 20px;
 
 		&--image {
-			width: 300px;
+			padding: var(--padding-medium);
+			width: 600px;
+			background-color: var(--box-color);
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			& > img {
 				height: 500px;
