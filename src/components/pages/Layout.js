@@ -5,10 +5,10 @@ import './Layout.scss'
 
 import { punkApiPagination } from 'client/api/punkApi'
 
+import Banner from 'components/global/Banner'
 import MainPage from 'components/pages/MainPage'
 import ItemPage from 'components/pages/ItemPage'
 import FavoritesPage from 'components/pages/FavoritesPage'
-import image from 'assets/images/beers_background.avif'
 
 /**
  * Layout page component
@@ -43,7 +43,7 @@ const Layout = () => {
 
 	return (
 		<main className="layout">
-			<div className="banner" style={{ backgroundImage: `url(${image})` }} />
+			<Banner />
 
 			<Switch>
 				<Route exact path="/">
