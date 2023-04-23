@@ -1,11 +1,6 @@
 ## 🤖 Monitoring
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2a99c73d-d42d-4b46-bb45-a6d4ddb456bc/deploy-status)](https://app.netlify.com/sites/quizzical-agnesi-5de01a/deploys)
-
-<img src="https://snyk.io/wp-content/uploads/title-card-logo-white-1.png" width="135">
-
-<br />
-<br />
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a400adec-0813-411d-9445-5fe70f8fc139/deploy-status)](https://app.netlify.com/sites/gid-coders-recruitment-task/deploys)
 
 ## 🚀 Tests
 
@@ -16,8 +11,6 @@
 ![Badge Functions](coverage/badge-functions.svg)
 
 ![Badge Branches](coverage/badge-branches.svg)
-
-<br />
 
 # GID-CODERS-Recruitment-Task
 
